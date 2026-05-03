@@ -10,5 +10,6 @@
     <string name="menu_calendario">Calendario</string>
     <string name="menu_amigos">Amigos</string>
     <string name="menu_perfil">Perfil</string>
+    <string name="fire_icon">Estado de racha completada</string>
 
 </resources>

@@ -3,6 +3,7 @@ package com.example.parcial_1_am_acn4a_dotsenko;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
@@ -32,19 +33,19 @@ public class MainActivity extends AppCompatActivity {
         rachaContainer = findViewById(R.id.rachaContainer);
         Button btnNuevaRacha = findViewById(R.id.btnNuevaRacha);
 
-        agregarRacha("🧘", "Yoga", 15);
-        agregarRacha("🇬🇧", "Inglés", 42);
-        agregarRacha("🇪🇸", "Español", 28);
-        agregarRacha("🏃", "Correr", 10);
-        agregarRacha("🚭", "No fumar", 60);
+        agregarRacha("🧘", "Yoga", 15, true);
+        agregarRacha("🇬🇧", "Inglés", 42, false);
+        agregarRacha("🇪🇸", "Español", 28, true);
+        agregarRacha("🏃", "Correr", 10, false);
+        agregarRacha("🚭", "No fumar", 60, true);
 
         btnNuevaRacha.setOnClickListener(v -> {
-            agregarRacha("⭐", "Nueva racha", 0);
+            agregarRacha("⭐", "Nueva racha", 0, false);
         });
     }
 
-    private void agregarRacha(String icono, String nombre, int dias) {
-        rachas.add(new Racha(icono, nombre, dias));
+    private void agregarRacha(String icono, String nombre, int dias, boolean completadaHoy) {
+        rachas.add(new Racha(icono, nombre, dias, completadaHoy));
 
         Collections.sort(rachas, new Comparator<Racha>() {
             @Override
@@ -64,13 +65,36 @@ public class MainActivity extends AppCompatActivity {
 
             TextView txtIcon = card.findViewById(R.id.txtRachaIcon);
             TextView txtName = card.findViewById(R.id.txtRachaName);
-            TextView txtSubtitle = card.findViewById(R.id.txtRachaSubtitle);
             TextView txtDays = card.findViewById(R.id.txtRachaDays);
+            ImageView imgFire = card.findViewById(R.id.imgFire);
 
             txtIcon.setText(racha.icono);
             txtName.setText(racha.nombre);
-            txtSubtitle.setText("Racha activa");
-            txtDays.setText(racha.dias + " días 🔥");
+            txtDays.setText(racha.dias + " días");
+
+            if (racha.completadaHoy) {
+                imgFire.setImageResource(R.drawable.ic_fire_active);
+            } else {
+                imgFire.setImageResource(R.drawable.ic_fire_inactive);
+            }
+
+            imgFire.setOnClickListener(v -> {
+                if (racha.completadaHoy) {
+                    racha.completadaHoy = false;
+
+                    if (racha.dias > 0) {
+                        racha.dias = racha.dias - 1;
+                    }
+
+                    imgFire.setImageResource(R.drawable.ic_fire_inactive);
+                } else {
+                    racha.completadaHoy = true;
+                    racha.dias = racha.dias + 1;
+                    imgFire.setImageResource(R.drawable.ic_fire_active);
+                }
+
+                txtDays.setText(racha.dias + " días");
+            });
 
             rachaContainer.addView(card);
         }
@@ -80,11 +104,13 @@ public class MainActivity extends AppCompatActivity {
         String icono;
         String nombre;
         int dias;
+        boolean completadaHoy;
 
-        Racha(String icono, String nombre, int dias) {
+        Racha(String icono, String nombre, int dias, boolean completadaHoy) {
             this.icono = icono;
             this.nombre = nombre;
             this.dias = dias;
+            this.completadaHoy = completadaHoy;
         }
     }
 }

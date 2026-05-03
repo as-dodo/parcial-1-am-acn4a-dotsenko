@@ -31,23 +31,30 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txtRachaSubtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Racha activa"
-            android:textSize="14sp"
-            android:textColor="#777777"
-            android:layout_marginTop="4dp" />
-
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/txtRachaDays"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="15 días 🔥"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/txtRachaDays"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15 días"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgFire"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_fire_inactive"
+            android:contentDescription="@string/fire_icon" />
+
+    </LinearLayout>
 
 </LinearLayout>
