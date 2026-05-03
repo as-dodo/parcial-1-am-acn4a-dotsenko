@@ -108,7 +108,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Inicio"
+                android:text="@string/menu_inicio"
                 android:textColor="#6F55B5"
                 android:textSize="13sp"
                 android:textStyle="bold" />
@@ -130,7 +130,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Calendario"
+                android:text="@string/menu_calendario"
                 android:textColor="#666666"
                 android:textSize="13sp"
                 android:textStyle="bold" />
@@ -152,7 +152,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Amigos"
+                android:text="@string/menu_amigos"
                 android:textColor="#666666"
                 android:textSize="13sp"
                 android:textStyle="bold" />
@@ -174,7 +174,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Perfil"
+                android:text="@string/menu_perfil"
                 android:textColor="#666666"
                 android:textSize="13sp"
                 android:textStyle="bold" />

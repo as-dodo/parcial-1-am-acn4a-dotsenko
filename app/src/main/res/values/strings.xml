@@ -6,8 +6,9 @@
     <string name="btn_new_racha">Nueva racha</string>
     <string name="your_rachas">Tus Rachas</string>
     <string name="racha_format">%1$s - %2$d días 🔥</string>
-    <string name="menu_inicio">🏠&#10;Inicio</string>
-    <string name="menu_calendario">📅&#10;Calendario</string>
-    <string name="menu_amigos">👥&#10;Amigos</string>
-    <string name="menu_perfil">👤&#10;Perfil</string>
+    <string name="menu_inicio">Inicio</string>
+    <string name="menu_calendario">Calendario</string>
+    <string name="menu_amigos">Amigos</string>
+    <string name="menu_perfil">Perfil</string>
+
 </resources>
