@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">parcial-1-am-acn4a-dotsenko</string>
     <string name="title_home">Hola, Ana</string>
-    <string name="today">Hoy, 29 de abril</string>
+    <string name="today_format">Hoy, %1$s</string>
+    <string name="avatar_ana">Avatar de Ana</string>
     <string name="btn_new_racha">Nueva racha</string>
     <string name="your_rachas">Tus Rachas</string>
     <string name="racha_format">%1$s - %2$d días 🔥</string>

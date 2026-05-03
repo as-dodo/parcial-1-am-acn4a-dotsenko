@@ -20,6 +20,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView txtToday = findViewById(R.id.txtToday);
+
+        java.text.SimpleDateFormat sdf =
+                new java.text.SimpleDateFormat("d 'de' MMMM", java.util.Locale.getDefault());
+
+        String fecha = sdf.format(new java.util.Date());
+
+        txtToday.setText(getString(R.string.today_format, fecha));
 
         rachaContainer = findViewById(R.id.rachaContainer);
         Button btnNuevaRacha = findViewById(R.id.btnNuevaRacha);
