@@ -9,7 +9,7 @@
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hola, Ana"
+        android:text="@string/title_home"
         android:textSize="32sp"
         android:textStyle="bold" />
 
@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Hoy, 29 de abril"
+        android:text="@string/today"
         android:textSize="18sp" />
 
     <Button
@@ -26,13 +26,13 @@
         android:layout_width="358dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Nueva racha" />
+        android:text="@string/btn_new_racha" />
 
     <TextView
         android:id="@+id/txtTusRachas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tus Rachas"
+        android:text="@string/your_rachas"
         android:textSize="22sp"
         android:textStyle="bold"
         android:layout_marginTop="24dp" />

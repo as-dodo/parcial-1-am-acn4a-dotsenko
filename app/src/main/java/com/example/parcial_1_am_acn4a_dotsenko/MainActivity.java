@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void agregarRacha(String nombre, int dias) {
         TextView textView = new TextView(this);
-        textView.setText(nombre + " - " + dias + " días 🔥");
+        String text = getString(R.string.racha_format, nombre, dias);
+        textView.setText(text);
         textView.setTextSize(18);
         textView.setPadding(0, 16, 0, 16);
 
