@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                     imgFire.setImageResource(R.drawable.ic_fire_active);
                 }
 
-                txtDays.setText(racha.dias + " días");
+                txtDays.setText(getString(R.string.racha_days_format, racha.dias));
             });
 
             rachaContainer.addView(card);

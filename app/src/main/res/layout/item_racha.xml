@@ -13,7 +13,6 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:gravity="center"
-        android:text="🧘"
         android:textSize="26sp" />
 
     <LinearLayout
@@ -27,7 +26,6 @@
             android:id="@+id/txtRachaName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yoga"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -43,7 +41,6 @@
             android:id="@+id/txtRachaDays"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="15 días"
             android:textSize="16sp"
             android:textStyle="bold" />
 
