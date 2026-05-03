@@ -11,5 +11,6 @@
     <string name="menu_perfil">Perfil</string>
     <string name="racha_days_format">%1$d días</string>
     <string name="fire_icon">Estado de racha completada</string>
+    <string name="friend_rachas">Rachas con amigos</string>
 
 </resources>

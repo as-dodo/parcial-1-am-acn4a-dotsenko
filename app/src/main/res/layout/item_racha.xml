@@ -2,11 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:gravity="center_vertical"
-    android:padding="16dp"
     android:layout_marginBottom="12dp"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="10dp">
 
     <TextView
         android:id="@+id/txtRachaIcon"
@@ -18,9 +18,9 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:layout_weight="1"
-        android:orientation="vertical"
-        android:layout_marginStart="12dp">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/txtRachaName"
@@ -34,8 +34,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/txtRachaDays"
@@ -49,8 +49,8 @@
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:layout_marginStart="8dp"
-            android:src="@drawable/ic_fire_inactive"
-            android:contentDescription="@string/fire_icon" />
+            android:contentDescription="@string/fire_icon"
+            android:src="@drawable/ic_fire_inactive" />
 
     </LinearLayout>
 

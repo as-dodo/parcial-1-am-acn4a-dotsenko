@@ -4,20 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="@dimen/padding_activity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="@dimen/margin_bottom_header">
 
         <TextView
             android:id="@+id/txtTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/title_home"
-            android:textSize="28sp"
+            android:textSize="@dimen/title_text_size"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@id/imgAvatar"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,24 +27,24 @@
             android:id="@+id/txtToday"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="@dimen/margin_top_today"
             android:text="@string/today_format"
-            android:textColor="#666666"
-            android:textSize="16sp"
+            android:textColor="@color/gray_666"
+            android:textSize="@dimen/today_text_size"
             app:layout_constraintEnd_toStartOf="@id/imgAvatar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txtTitle" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imgAvatar"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
             android:scaleType="centerCrop"
             android:src="@drawable/avatar_ana"
             android:contentDescription="@string/avatar_ana"
             app:shapeAppearanceOverlay="@style/CircleImage"
-            app:strokeColor="#FFFFFF"
-            app:strokeWidth="3dp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/avatar_stroke"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,16 +55,37 @@
         android:layout_width="358dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/btn_new_racha" />
+        android:text="@string/btn_new_racha"
+        android:backgroundTint="@color/purple_main"
+        android:textColor="@color/white"/>
 
-    <TextView
-        android:id="@+id/txtTusRachas"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/tabsContainer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/your_rachas"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:layout_marginTop="24dp" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="24dp">
+
+        <TextView
+            android:id="@+id/txtTusRachas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/your_rachas"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_main" />
+
+        <TextView
+            android:id="@+id/txtRachasConAmigos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/friend_rachas"
+            android:textSize="16sp"
+            android:textColor="@color/gray_999" />
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -85,7 +106,7 @@
         android:layout_width="match_parent"
         android:layout_height="76dp"
         android:layout_marginTop="12dp"
-        android:background="#FFFFFF"
+        android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="8dp">
@@ -101,16 +122,16 @@
             android:gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="@dimen/menu_icon_width"
+                android:layout_height="@dimen/menu_icon_height"
                 android:src="@drawable/home"
-                app:tint="#6F55B5" />
+                app:tint="@color/purple_main" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/menu_inicio"
-                android:textColor="#6F55B5"
-                android:textSize="13sp"
+                android:textColor="@color/purple_main"
+                android:textSize="@dimen/menu_text_size"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -123,16 +144,16 @@
             android:gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="@dimen/menu_icon_width"
+                android:layout_height="@dimen/menu_icon_height"
                 android:src="@drawable/calendar"
-                app:tint="#666666" />
+                app:tint="@color/gray_666" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/menu_calendario"
-                android:textColor="#666666"
-                android:textSize="13sp"
+                android:textColor="@color/gray_666"
+                android:textSize="@dimen/menu_text_size"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -145,16 +166,16 @@
             android:gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="@dimen/menu_icon_width"
+                android:layout_height="@dimen/menu_icon_height"
                 android:src="@drawable/friends"
-                app:tint="#666666" />
+                app:tint="@color/gray_666" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/menu_amigos"
-                android:textColor="#666666"
-                android:textSize="13sp"
+                android:textColor="@color/gray_666"
+                android:textSize="@dimen/menu_text_size"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -167,16 +188,16 @@
             android:gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="@dimen/menu_icon_width"
+                android:layout_height="@dimen/menu_icon_height"
                 android:src="@drawable/profile"
-                app:tint="#666666" />
+                app:tint="@color/gray_666" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/menu_perfil"
-                android:textColor="#666666"
-                android:textSize="13sp"
+                android:textColor="@color/gray_666"
+                android:textSize="@dimen/menu_text_size"
                 android:textStyle="bold" />
         </LinearLayout>
 
