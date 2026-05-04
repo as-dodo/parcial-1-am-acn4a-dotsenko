@@ -4,19 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="@dimen/padding_activity">
+    android:padding="24dp"
+    android:background="@drawable/screen_bg">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_bottom_header">
+        android:layout_height="80dp"
+        android:layout_marginBottom="10dp">
 
         <TextView
             android:id="@+id/txtTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_medium"
             android:text="@string/title_home"
+            android:textColor="@color/black"
             android:textSize="@dimen/title_text_size"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@id/imgAvatar"
@@ -24,13 +27,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/txtToday"
+            android:id="@+id/txtSubtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_top_today"
-            android:text="@string/today_format"
-            android:textColor="@color/gray_666"
-            android:textSize="@dimen/today_text_size"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            android:text="@string/home_subtitle"
+            android:textColor="@color/purple_main"
+            android:textSize="@dimen/body_text_size"
             app:layout_constraintEnd_toStartOf="@id/imgAvatar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txtTitle" />
@@ -39,9 +43,9 @@
             android:id="@+id/imgAvatar"
             android:layout_width="@dimen/avatar_size"
             android:layout_height="@dimen/avatar_size"
+            android:contentDescription="@string/avatar_ana"
             android:scaleType="centerCrop"
             android:src="@drawable/avatar_ana"
-            android:contentDescription="@string/avatar_ana"
             app:shapeAppearanceOverlay="@style/CircleImage"
             app:strokeColor="@color/white"
             app:strokeWidth="@dimen/avatar_stroke"
@@ -50,11 +54,68 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <LinearLayout
+        android:id="@+id/todaySummaryContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/light_card_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/imgTodayFire"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:contentDescription="@string/fire_icon"
+            android:src="@drawable/ic_fire_active" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtToday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/today_format"
+                android:textColor="@color/purple_main"
+                android:textSize="@dimen/body_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtCompletedToday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/completed_today_preview"
+                android:textColor="@color/gray_999"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtTodayMotivation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/today_motivation"
+                android:textColor="@color/gray_666"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
     <Button
         android:id="@+id/btnNuevaRacha"
         android:layout_width="358dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="@string/btn_new_racha"
         android:backgroundTint="@color/purple_main"
         android:textColor="@color/white"/>
@@ -65,7 +126,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:layout_marginTop="24dp">
+        android:layout_marginTop="16dp">
 
         <TextView
             android:id="@+id/txtTusRachas"

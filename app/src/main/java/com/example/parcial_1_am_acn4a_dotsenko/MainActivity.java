@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     private LinearLayout rachaContainer;
+    private TextView txtCompletedToday;
     private ArrayList<Racha> rachas = new ArrayList<>();
 
     @Override
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         txtToday.setText(getString(R.string.today_format, fecha));
 
         rachaContainer = findViewById(R.id.rachaContainer);
+        txtCompletedToday = findViewById(R.id.txtCompletedToday);
         Button btnNuevaRacha = findViewById(R.id.btnNuevaRacha);
 
         agregarRacha("🧘", "Yoga", 15, true);
@@ -94,12 +96,24 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 txtDays.setText(getString(R.string.racha_days_format, racha.dias));
+                actualizarResumenDelDia();
             });
 
             rachaContainer.addView(card);
         }
+        actualizarResumenDelDia();
     }
+    private void actualizarResumenDelDia() {
+        int completadas = 0;
 
+        for (Racha racha : rachas) {
+            if (racha.completadaHoy) {
+                completadas++;
+            }
+        }
+
+        txtCompletedToday.setText(getString(R.string.completed_today_format, completadas));
+    }
     private static class Racha {
         String icono;
         String nombre;

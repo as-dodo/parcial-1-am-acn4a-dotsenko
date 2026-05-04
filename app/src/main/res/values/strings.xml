@@ -12,5 +12,9 @@
     <string name="racha_days_format">%1$d días</string>
     <string name="fire_icon">Estado de racha completada</string>
     <string name="friend_rachas">Rachas con amigos</string>
+    <string name="completed_today_format">%1$d rachas completadas hoy</string>
+    <string name="completed_today_preview">0 rachas completadas hoy</string>
+    <string name="home_subtitle">¡Sigue construyendo tu mejor versión!</string>
+    <string name="today_motivation">¡Increíble! Sigue así</string>
 
 </resources>
