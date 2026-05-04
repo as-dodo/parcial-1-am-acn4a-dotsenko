@@ -17,6 +17,10 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout rachaContainer;
     private TextView txtCompletedToday;
     private ArrayList<Racha> rachas = new ArrayList<>();
+    private LinearLayout menuInicio;
+    private LinearLayout menuCalendario;
+    private LinearLayout menuAmigos;
+    private LinearLayout menuPerfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
         btnNuevaRacha.setOnClickListener(v -> {
             agregarRacha("⭐", "Nueva racha", 0, false);
         });
+        menuInicio = findViewById(R.id.menuInicio);
+        menuCalendario = findViewById(R.id.menuCalendario);
+        menuAmigos = findViewById(R.id.menuAmigos);
+        menuPerfil = findViewById(R.id.menuPerfil);
+
+        configurarMenuInferior();
     }
 
     private void agregarRacha(String icono, String nombre, int dias, boolean completadaHoy) {
@@ -126,5 +136,31 @@ public class MainActivity extends AppCompatActivity {
             this.dias = dias;
             this.completadaHoy = completadaHoy;
         }
+    }
+    private void configurarMenuInferior() {
+        menuInicio.setOnClickListener(v -> {
+            seleccionarMenu(menuInicio);
+        });
+
+        menuCalendario.setOnClickListener(v -> {
+            seleccionarMenu(menuCalendario);
+        });
+
+        menuAmigos.setOnClickListener(v -> {
+            seleccionarMenu(menuAmigos);
+        });
+
+        menuPerfil.setOnClickListener(v -> {
+            seleccionarMenu(menuPerfil);
+        });
+    }
+
+    private void seleccionarMenu(LinearLayout selectedMenu) {
+        menuInicio.setBackgroundResource(0);
+        menuCalendario.setBackgroundResource(0);
+        menuAmigos.setBackgroundResource(0);
+        menuPerfil.setBackgroundResource(0);
+
+        selectedMenu.setBackgroundResource(R.drawable.bottom_nav_active_bg);
     }
 }
