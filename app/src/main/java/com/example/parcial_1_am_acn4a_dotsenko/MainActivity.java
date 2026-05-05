@@ -62,12 +62,13 @@ public class MainActivity extends AppCompatActivity {
         Collections.sort(rachas, new Comparator<Racha>() {
             @Override
             public int compare(Racha racha1, Racha racha2) {
-                return racha2.dias - racha1.dias;
+                return Integer.compare(racha2.dias, racha1.dias);
             }
         });
 
         mostrarRachas();
     }
+
 
     private void mostrarRachas() {
         rachaContainer.removeAllViews();
